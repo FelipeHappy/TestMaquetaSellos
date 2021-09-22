@@ -1,0 +1,67 @@
+.header-background-color{
+    --background: #ac6a08 !important;
+}
+
+.button-fixed-footer {
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    right: 0;
+}
+
+.patent-name { 
+    border: 1px solid !important;
+    border-radius:5px;
+    background: white !important;
+}
+
+.sello-state { 
+    border-radius:5px;
+    padding:0 5px;
+    text-align:center;
+    height: 50px;
+    width: 50px !important;
+    background:rgb(255, 145, 0);
+    color: rgb(255, 255, 255);
+    
+}
+
+.sello-state-example { 
+    border-radius:5px;
+    padding: 0px 0px 0px 0px;
+    text-align:center;
+    height: 50px;
+    width: 50px !important;
+    background:rgb(0, 21, 138);
+    color: rgb(255, 255, 255);
+    
+}
+
+.sello-state-example > ion-label {
+    font-weight: bold;
+   font-size: 25px;
+   padding-top: 12px;
+}
+
+.sello-state > ion-label {
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 12px;
+}
+
+.list-data {
+    height: 250px;
+    overflow-y: scroll;
+    --ion-item-background:#ffffffd5;
+    border: 2px solid;
+}
+
+.item-content {
+    background-color: white !important;
+}
+
+.button-scan {
+    --border-radius: 10px;
+    --box-shadow: 0px 14px 25px rgba(0, 0, 0, 0.59);
+}
+
