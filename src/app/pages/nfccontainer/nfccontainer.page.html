@@ -1,16 +1,7 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>nfccontainer</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content> -->
 <ion-header>
   <ion-toolbar color='success'>
     <ion-buttons slot='start'>
-      <ion-back-button defaultHref='/'> </ion-back-button>
+      <ion-back-button text="Volver" defaultHref='/'></ion-back-button>
     </ion-buttons>
     <ion-title>Detalle patente</ion-title>
   </ion-toolbar>
@@ -19,74 +10,63 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col size='4' class='ion-text-start'>
+      <ion-col size='6' class='ion-text-start'>
         <h2>Patente:</h2>
       </ion-col>
       <ion-col size='6' class='ion-text-start'>
-        <h2 class="ion-text-center patent-name">JFDJ50</h2>
+        <h2 class="ion-text-center patent-name">{{patente}}</h2>
       </ion-col>
     </ion-row>
-    <ion-list class='list-data'>
-      <ion-item>
-          <ion-label>Sello</ion-label>
-          <ion-label>Estado</ion-label>
-          <ion-label>Vence</ion-label>
-      </ion-item>
-      <ion-item>
-        <span class='sello-state'>
-          <ion-label>N</ion-label>
-        </span>
-        <ion-label class="ion-text-end" color='success'>Vigente</ion-label>
-        <ion-label class="ion-text-end">23-03-2022</ion-label>
-      </ion-item>
-      <ion-item>
-        <span class='sello-state-example'>
-          <ion-label>A</ion-label>
-        </span>
-        <ion-label class="ion-text-end" color='success'>Vigente</ion-label>
-        <ion-label class="ion-text-end">23-03-2022</ion-label>
-      </ion-item>
-      <ion-item>
-        <span class='sello-state-example'>
-          <ion-label>A</ion-label>
-        </span>
-        <ion-label class="ion-text-end" color='success'>Vigente</ion-label>
-        <ion-label class="ion-text-end">23-03-2022</ion-label>
-      </ion-item>
-      <ion-item>
-        <span class='sello-state'>
-          <ion-label>N</ion-label>
-        </span>
-        <ion-label class="ion-text-end" color='success'>Vigente</ion-label>
-        <ion-label class="ion-text-end">23-03-2022</ion-label>
-      </ion-item>
-      <ion-item>
-        <span class='sello-state'>
-          <ion-label>N</ion-label>
-        </span>
-        <ion-label class="ion-text-end" color='success'>Vigente</ion-label>
-        <ion-label class="ion-text-end">23-03-2022</ion-label>
-      </ion-item>
+
+    <!-- Lista Vigencia Patentes -->
+    <ion-list class='list-data' >
+
+    <ion-item>
+      <ion-label>Sello</ion-label>
+      <ion-label>Estado</ion-label>
+      <ion-label>Vence</ion-label>
+    </ion-item>
+
+    <div *ngFor="let sello of sellos">
+    <ion-item>
+      <span class='sello-state' [ngStyle]="{background: sello.color_code}">
+        <ion-label>{{getSelloLetter(sello.color_sello)}}</ion-label>
+      </span>
+      
+      <ion-label class="ion-text-end" color='success'>{{sello.estado}}</ion-label>
+      <ion-label class="ion-text-end">{{sello.fecha_expiracion}}</ion-label>
+    </ion-item>
+    </div> 
+
     </ion-list>
 
+    <!-- ----------------------- -->
+    <!-- Lista Datos Adicionales -->
     <ion-row class='container-data'>
-      <ion-col size='12' class="ion-text-start">
-        <h3>Empresa:</h3>
+      <ion-col size='10' class="ion-text-start">
+        <h4>Empresa: {{empresa}}</h4>
+        <h4>Gerencia: {{gerencia}} </h4>
+        <h4>Fecha de lectura: {{fecha_lectura}} </h4>
+        <h4>Id Sello: {{tag}} </h4>
       </ion-col>
-      <ion-col size='12' class="ion-text-start">
-        <h3>Gerencia:</h3>
+      <!-- <ion-col size='10' class="ion-text-start">
+        <h4>Gerencia: {{gerencia}} </h4>
       </ion-col>
-      <ion-col size='12' class="ion-text-start">
-        <h3>Fecha de lectura:</h3>
+      <ion-col size='10' class="ion-text-start">
+        <h4>Fecha de lectura: {{fecha_lectura}} </h4>
       </ion-col>
-      <ion-col size='12' class="ion-text-start">
-        <h3>Id Sello:</h3>
-      </ion-col>
+      <ion-col size='10' class="ion-text-start">
+        <h4>Id Sello: {{tag}} </h4>
+      </ion-col> -->
     </ion-row>
+
+
+
     <ion-row class='button-fixed-footer'>
       <ion-col size="12" class="ion-text-center ion-padding-top">
-        <ion-button expand="block" color="primary" href="/login" class='button-scan'>
-          <h3>Escanear otro Sello</h3>
+        <ion-button expand="block" color="dark" routerLink="/scansello" class='button-scan'>
+          <!-- <h3>Escanear otro Sello</h3> -->
+          Escanear Otro Sello
         </ion-button>
       </ion-col>
       <ion-col>

@@ -12,6 +12,7 @@ import { NfccontainerPage } from './nfccontainer.page';
   imports: [
     CommonModule,
     FormsModule,
+    
     IonicModule,
     NfccontainerPageRoutingModule
   ],

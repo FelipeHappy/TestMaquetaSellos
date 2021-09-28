@@ -144,7 +144,11 @@ const routes: Routes = [
   {
     path: 'nfccontainer',
     loadChildren: () => import('./pages/nfccontainer/nfccontainer.module').then( m => m.NfccontainerPageModule)
+  },  {
+    path: 'scansello',
+    loadChildren: () => import('./pages/scansello/scansello.module').then( m => m.ScanselloPageModule)
   },
+
   // {
   //   path: '**',
   //   redirectTo: 'login'
