@@ -1,4 +1,5 @@
-
+//Interface que utilizamos para consumir la data del servidor y compatibilizarla con el modelo.
+//(Apoya a los servicios de integracion)
 
 export interface Sello {
 
